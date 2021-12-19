@@ -15,8 +15,8 @@ const DashBoardNav = () => {
     let { path, url } = useRouteMatch();
     return (
         <div>
-            <h1 className='color-danger'>This is navbar</h1>
-             <Navbar  bg="primary" expand={false}>
+        
+             <Navbar  bg="dark" expand={false}>
                 <Container fluid>
                     <Navbar.Brand className='text-white' href="#">Dashboard</Navbar.Brand>
                     <Navbar.Toggle  aria-controls="offcanvasNavbar" />

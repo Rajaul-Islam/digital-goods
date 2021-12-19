@@ -19,7 +19,8 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto align-items-center">
                             <Nav.Link as={NavLink} to='/home'>Home</Nav.Link>
-                            <Nav.Link as={NavLink} to='/about'>About</Nav.Link>
+                            
+                            <Nav.Link as={NavLink} to='/services'>Services</Nav.Link>
                             <Nav.Link href="#link"><FontAwesomeIcon icon={faShoppingCart} /><Badge className='badge' bg="secondary">0</Badge>
                             </Nav.Link>
 

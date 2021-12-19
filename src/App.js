@@ -21,6 +21,7 @@ import Login from "./Components/UserActivities/Login/Login";
 import Details from "./Components/Shared/Header/Details/Details";
 import PrivateRoute from "./Components/UserActivities/PrivateRoute/PrivateRoute";
 import DashBoard from "./Components/DashBoard/DashBoard";
+import AllServices from "./Components/AllServices/AllServices";
 function App() {
 
 
@@ -29,7 +30,7 @@ function App() {
     <div>
       <AuthProvider>
         <Router>
-          <Header></Header>
+         
           <Switch>
             <Route exact path='/'>
               <Home></Home>
@@ -39,6 +40,9 @@ function App() {
             </Route>
             <Route path='/about'>
               <About></About>
+            </Route>
+            <Route path='/services'>
+             <AllServices></AllServices>
             </Route>
             <Route path='/signup'>
               <SignUp></SignUp>
