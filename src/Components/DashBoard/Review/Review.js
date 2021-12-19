@@ -36,7 +36,7 @@ const Review = () => {
     
     return (
        <div>
-           <h1>this is review</h1>
+           <h1 className=''>this is review</h1>
             <Form onSubmit={handleReviewSubmit} className='w-50 mx-auto'>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>User Name</Form.Label>

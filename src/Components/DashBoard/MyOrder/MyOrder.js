@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row, Table } from 'react-bootstrap';
 import useAuth from '../../Hook/useAuth';
 
 const MyOrder = () => {
@@ -34,7 +34,8 @@ const MyOrder = () => {
 
     }
     return (
-        <Container>
+       <div>
+            {/* <Container>
         <Row xs={1} md={3} className="g-4">
 
             {
@@ -64,7 +65,36 @@ const MyOrder = () => {
                 )
             }
         </Row >
-    </Container>
+    </Container> */}
+ <Table striped bordered hover variant="dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>User Name</th>
+                        <th>User Email</th>
+                        <th>Status</th>
+                        <th>Cancel Order</th>
+                    </tr>
+                </thead>
+                {
+                    orders.map(order =>
+                        <tbody>
+                            <tr>
+                                <td>{order._id}</td>
+                                <td>{order.serviceName}</td>
+                                <td>{order.userName}</td>
+                                <td>{order.userEmail}</td>
+                                <td>{order.orderStatus}</td>
+                                <td><Button onClick={() => deleteOrder(order._id)} variant="primary">Cancel Order</Button>
+                                    </td>
+                            </tr>
+                        </tbody>
+                    )
+                }
+            </Table>
+
+       </div>
     );
 };
 

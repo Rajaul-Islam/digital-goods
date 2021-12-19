@@ -6,6 +6,7 @@ import { Row } from 'react-bootstrap';
 import UserReview from '../UserReview/UserReview';
 import GetEmail from '../GetEmail/GetEmail';
 import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer';
 
 
 const Home = () => {
@@ -89,16 +90,17 @@ const Home = () => {
            <Header></Header>
         <Banner></Banner>
        <div className=' container-fluid' style={{backgroundColor:'#1b252f'}}>
-        <h1 className='text-center text-white py-5'>Top selling Mobile</h1>  
+        <h1 className='text-center text-white py-5'>Top selling Products</h1>  
         <Row xs={1} md={2} lg={3} className="g-4">
          
          {
-             mobiles.map(mobile=><Mobile mobile={mobile}></Mobile>)
+             mobiles.slice(0, 6).map(mobile=><Mobile mobile={mobile}></Mobile>)
          }
          </Row>
        </div>
        <UserReview></UserReview>
        <GetEmail></GetEmail>
+       <Footer></Footer>
         </div>
     );
 };

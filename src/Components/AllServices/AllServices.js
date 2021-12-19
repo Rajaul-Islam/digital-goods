@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import Mobile from '../Home/Mobile/Mobile';
+import Footer from '../Shared/Footer/Footer';
 import Header from '../Shared/Header/Header';
 
 const AllServices = () => {
@@ -14,14 +15,14 @@ const AllServices = () => {
     return (
         <div style={{backgroundColor: '#1b252f'}}>
             <Header></Header>
-            <h1  className='mt-3 text-white text-center'>Our Products</h1>
+            <h1  className='py-5 text-white text-center'>Our Services</h1>
             <Row xs={1} md={2} lg={3} className="g-4">
          
          {
              mobiles.map(mobile=><Mobile mobile={mobile}></Mobile>)
          }
          </Row>
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     );
 };

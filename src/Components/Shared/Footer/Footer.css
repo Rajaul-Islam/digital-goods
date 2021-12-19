@@ -1,0 +1,25 @@
+.footer-link a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    line-height: 35px;
+  }
+  
+  .gradient {
+    background: rgb(181, 180, 185);
+    background: linear-gradient(
+      0deg,
+      rgba(11, 45, 100, 0.952) 0%,
+      rgb(27, 26, 29)  100%
+    );
+  }
+  .copyright {
+    background-color: #14084e;
+  }
+  
+  .dropdown-menu.show {
+    left: -126px;
+    padding: 11px;
+  }
+  

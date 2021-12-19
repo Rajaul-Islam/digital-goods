@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row, Table } from 'react-bootstrap';
 import useAuth from '../../Hook/useAuth';
 
 const ManageAllOrder = () => {
     const { user } = useAuth()
     const [orders, setOrders] = useState([]);
+    console.log(orders);
     useEffect(() => {
         fetch('http://localhost:5000/users')
             .then(res => res.json())
@@ -56,38 +57,44 @@ const ManageAllOrder = () => {
             })
     }
     return (
-        <Container>
-        
-        <Row xs={1} md={3} className="g-4">
 
-            {
-                orders.map(order =>
-                    <Col key={order._id}>
+        <div>
 
-                        <Card>
-                            <Card.Header>{order.userName}</Card.Header>
-                            <Card.Body>
-                                <Card.Title>{order.serviceName}</Card.Title>
-                                <Card.Text>
-                                    {order.userEmail} <br></br>
-                                    {order.orderStatus}
-                                </Card.Text>
-                                <Button onClick={() => deleteOrder(order._id)} variant="primary">Cancel Order</Button>
-                                <Button className='m-2' onClick={() => changeStatus(order._id)} variant="primary">Confirm Order</Button>
-                            </Card.Body>
-                        </Card>
+            <Table striped bordered hover variant="dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>User Name</th>
+                        <th>User Email</th>
+                        <th>Status</th>
+                        <th>Cancel Or Confirm</th>
+                    </tr>
+                </thead>
+                {
+                    orders.map(order =>
+                        <tbody>
+                            <tr>
+                                <td>{order._id}</td>
+                                <td>{order.serviceName}</td>
+                                <td>{order.userName}</td>
+                                <td>{order.userEmail}</td>
+                                <td>{order.orderStatus}</td>
+                                <td><Button onClick={() => deleteOrder(order._id)} variant="primary">Cancel Order</Button>
+                                    <Button className='m-2' onClick={() => changeStatus(order._id)} variant="primary">Confirm Order</Button></td>
+                            </tr>
+                        </tbody>
+                    )
+                }
+            </Table>
+        </div>
 
 
-                    </Col>
 
 
 
 
 
-                )
-            }
-        </Row >
-    </Container>
     );
 };
 

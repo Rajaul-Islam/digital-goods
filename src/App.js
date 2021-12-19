@@ -27,7 +27,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="text-center">
       <AuthProvider>
         <Router>
          
