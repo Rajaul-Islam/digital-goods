@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
         <hr className="m-0 p-0" />
         <p className="text-center m-0 py-3 copyright">
-            Copyright © All Reserved by Dream Rider in
+            Copyright © All Reserved by Digital-Goods in
             2021
         </p>
     </div>

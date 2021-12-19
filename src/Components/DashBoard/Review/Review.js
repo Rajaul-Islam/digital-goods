@@ -14,7 +14,7 @@ const Review = () => {
         const userReview = { reviewerName: user.displayName, reviewerEmail: user.email, review, rating }
         console.log(userReview)
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://boiling-ravine-21246.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -33,44 +33,44 @@ const Review = () => {
 
         e.preventDefault()
     }
-    
+
     return (
-       <div>
-           <h1 className=''>this is review</h1>
+        <div>
+            <h1 className=''>this is review</h1>
             <Form onSubmit={handleReviewSubmit} className='w-50 mx-auto'>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>User Name</Form.Label>
-            <Form.Control type="text" readOnly value={user.displayName} placeholder="Your Name" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email"
-                value={user.email} readOnly
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Label>User Name</Form.Label>
+                    <Form.Control type="text" readOnly value={user.displayName} placeholder="Your Name" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email"
+                        value={user.email} readOnly
 
-                placeholder="name@example.com" />
-        </Form.Group>
+                        placeholder="name@example.com" />
+                </Form.Group>
 
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>Stars</Form.Label>
-            <Form.Control type="text"
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Label>Stars</Form.Label>
+                    <Form.Control type="text"
 
-                ref={ratingRef}
-                required
-                placeholder="Rating in 5" />
-        </Form.Group>
+                        ref={ratingRef}
+                        required
+                        placeholder="Rating in 5" />
+                </Form.Group>
 
-        <Form.Group
-            className="mb-3"
+                <Form.Group
+                    className="mb-3"
 
-            type='text'
-        >
-            <Form.Label>Review</Form.Label>
-            <Form.Control ref={reviewRef} as="textarea" required rows={3} />
-        </Form.Group>
+                    type='text'
+                >
+                    <Form.Label>Review</Form.Label>
+                    <Form.Control ref={reviewRef} as="textarea" required rows={3} />
+                </Form.Group>
 
-        <Button type="submit" value=''>Submit</Button>
-    </Form>
-       </div>
+                <Button type="submit" value=''>Submit</Button>
+            </Form>
+        </div>
     );
 };
 

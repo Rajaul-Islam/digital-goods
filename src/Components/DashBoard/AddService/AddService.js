@@ -18,7 +18,7 @@ const AddService = () => {
 
         const newProduct = { userName: user.displayName, userEmail: user.email, name, img, price, description };
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://boiling-ravine-21246.herokuapp.com/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,31 +41,31 @@ const AddService = () => {
 
     return (
         <Container>
-        <h1>Add a product</h1>
-        <Form onSubmit={handleAddProduct} className='w-50 mx-auto'>
-            <Form.Control type="text"
+            <h1>Add a product</h1>
+            <Form onSubmit={handleAddProduct} className='w-50 mx-auto'>
+                <Form.Control type="text"
 
-                value={user.displayName} readOnly
-                placeholder="User name" />
-            <br />
-            <Form.Control type="email" readOnly
-                value={user.email} placeholder="User email" />
-            <br />
-            <Form.Control type="text" required ref={nameRef} placeholder="Product Name" />
-            
-            <br />
-            <Form.Control type="text" required ref={priceRef} placeholder="Price" />
-            <br />
+                    value={user.displayName} readOnly
+                    placeholder="User name" />
+                <br />
+                <Form.Control type="email" readOnly
+                    value={user.email} placeholder="User email" />
+                <br />
+                <Form.Control type="text" required ref={nameRef} placeholder="Product Name" />
+
+                <br />
+                <Form.Control type="text" required ref={priceRef} placeholder="Price" />
+                <br />
 
 
-            <Form.Control size="sm" required ref={imgRef} type="text" placeholder="Photo Url" /><br />
-   
-            <Form.Control size="lg" required ref={descriptionRef} type='text' as="textarea" placeholder="Description" />
-            <Button className='mt-2' type='submit'>Add Product</Button>
-            
+                <Form.Control size="sm" required ref={imgRef} type="text" placeholder="Photo Url" /><br />
 
-        </Form>
-    </Container>
+                <Form.Control size="lg" required ref={descriptionRef} type='text' as="textarea" placeholder="Description" />
+                <Button className='mt-2' type='submit'>Add Product</Button>
+
+
+            </Form>
+        </Container>
     );
 };
 

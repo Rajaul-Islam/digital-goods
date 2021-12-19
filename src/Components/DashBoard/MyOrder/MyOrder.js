@@ -6,7 +6,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
     const { user } = useAuth()
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`
+        const url = `https://boiling-ravine-21246.herokuapp.com/orders?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
@@ -16,7 +16,7 @@ const MyOrder = () => {
         const process = window.confirm("Are you sure you want to cancel this order")
         if (process) {
 
-            const uri = `http://localhost:5000/orders/${id}`
+            const uri = `https://boiling-ravine-21246.herokuapp.com/orders/${id}`
             fetch(uri, {
                 method: 'DELETE'
             })
@@ -34,7 +34,7 @@ const MyOrder = () => {
 
     }
     return (
-       <div>
+        <div>
             {/* <Container>
         <Row xs={1} md={3} className="g-4">
 
@@ -66,7 +66,7 @@ const MyOrder = () => {
             }
         </Row >
     </Container> */}
- <Table striped bordered hover variant="dark">
+            <Table striped bordered hover variant="dark">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -87,14 +87,14 @@ const MyOrder = () => {
                                 <td>{order.userEmail}</td>
                                 <td>{order.orderStatus}</td>
                                 <td><Button onClick={() => deleteOrder(order._id)} variant="primary">Cancel Order</Button>
-                                    </td>
+                                </td>
                             </tr>
                         </tbody>
                     )
                 }
             </Table>
 
-       </div>
+        </div>
     );
 };
 

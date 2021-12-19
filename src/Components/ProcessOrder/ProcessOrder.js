@@ -8,7 +8,7 @@ const ProcessOrder = () => {
     const [product, setProduct] = useState();
     console.log(product)
     useEffect(() => {
-        const url = `http://localhost:5000/services/${id}`
+        const url = `https://boiling-ravine-21246.herokuapp.com/services/${id}`
 
         fetch(url)
             .then(res => res.json())
@@ -22,7 +22,7 @@ const ProcessOrder = () => {
         console.log(newUser);
 
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://boiling-ravine-21246.herokuapp.com/users', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
@@ -49,38 +49,38 @@ const ProcessOrder = () => {
     }
     return (
         <div className='body my-5'>
-        <div className='style shadow-lg container'>
-            <h1>Confirm order</h1>
-            <form onSubmit={handelSubmit} action=""> <br />
-                <input
-                    placeholder='enter your name'
-                    ref={nameRef}
-                    type="text"
-                    name='userName'
-                    required
-                /> <br />
+            <div className='style shadow-lg container'>
+                <h1>Confirm order</h1>
+                <form onSubmit={handelSubmit} action=""> <br />
+                    <input
+                        placeholder='enter your name'
+                        ref={nameRef}
+                        type="text"
+                        name='userName'
+                        required
+                    /> <br />
 
-                <input
-                    value={product?.name}
-                    type="text"
-                    readOnly
-                    required /> <br />
+                    <input
+                        value={product?.name}
+                        type="text"
+                        readOnly
+                        required /> <br />
 
-                <input type="email"
-                    name="userEmail"
-                    readOnly
-                    value={user.email}
-                    required /> <br />
-                <input
-                    type="text"
-                    name="status"
-                    readOnly
-                    value={'pending'}
-                    required /> <br />
-                <input className='bg-warning rounded' type="submit" value="Confirm Order" />
-            </form>
+                    <input type="email"
+                        name="userEmail"
+                        readOnly
+                        value={user.email}
+                        required /> <br />
+                    <input
+                        type="text"
+                        name="status"
+                        readOnly
+                        value={'pending'}
+                        required /> <br />
+                    <input className='bg-warning rounded' type="submit" value="Confirm Order" />
+                </form>
+            </div>
         </div>
-    </div>
     );
 };
 

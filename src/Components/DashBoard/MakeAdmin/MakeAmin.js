@@ -12,7 +12,7 @@ const MakeAmin = () => {
     const handleAdminSubmit = e => {
         const user = { email }
         console.log(user);
-        fetch('http://localhost:5000/uniqueUser/admin', {
+        fetch('https://boiling-ravine-21246.herokuapp.com/uniqueUser/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
