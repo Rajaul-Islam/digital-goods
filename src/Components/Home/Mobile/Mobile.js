@@ -12,7 +12,7 @@ const Mobile = ({ mobile }) => {
                     </div>
                     <div className= "content">
                         <h3>{mobile.name}</h3>
-                        <p>DIn publishing and graphic design,           Lorem ipsum is a placeholder text               commonly used to demonstrate the visual         form of a document or a typeface without         relying on meaningful content.</p>
+                        <p className='text-white'>DIn publishing and graphic design,           Lorem ipsum is a placeholder text               commonly used to demonstrate the visual         form of a document or a typeface without         relying on meaningful content.</p>
                         <Link to={`/processorder/${mobile._id}`}> <Button
                             variant="outline-warning"
                             className='btn-color' >Process to Buy</Button></Link>

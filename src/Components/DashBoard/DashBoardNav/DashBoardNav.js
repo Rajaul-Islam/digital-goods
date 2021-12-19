@@ -6,6 +6,7 @@ import AddService from '../AddService/AddService';
 import MakeAmin from '../MakeAdmin/MakeAmin';
 import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
 import ManageProduct from '../ManageProduct/ManageProduct';
+import MyOrder from '../MyOrder/MyOrder';
 import Review from '../Review/Review';
 const DashBoardNav = () => {
     const { admin, logout } = useAuth()
@@ -85,10 +86,10 @@ const DashBoardNav = () => {
                    
                 </Route>
                 <Route path={`${path}/myOrder`}>
-                   
+                <MyOrder></MyOrder>
                 </Route>
                 <Route path={`${path}/review`}>
-                   <Review></Review>
+                  <Review></Review>
                 </Route>
                 <Route path={`${path}/manageOrder`}>
                    <ManageAllOrder></ManageAllOrder>

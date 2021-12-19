@@ -14,7 +14,7 @@ const Review = () => {
         const userReview = { reviewerName: user.displayName, reviewerEmail: user.email, review, rating }
         console.log(userReview)
 
-        fetch('https://dry-fortress-62945.herokuapp.com/review', {
+        fetch('http://localhost:5000/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -35,7 +35,9 @@ const Review = () => {
     }
     
     return (
-        <Form onSubmit={handleReviewSubmit} className='w-50 mx-auto'>
+       <div>
+           <h1>this is review</h1>
+            <Form onSubmit={handleReviewSubmit} className='w-50 mx-auto'>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>User Name</Form.Label>
             <Form.Control type="text" readOnly value={user.displayName} placeholder="Your Name" />
@@ -68,6 +70,7 @@ const Review = () => {
 
         <Button type="submit" value=''>Submit</Button>
     </Form>
+       </div>
     );
 };
 

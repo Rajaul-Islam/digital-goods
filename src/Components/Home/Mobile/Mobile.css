@@ -1,6 +1,7 @@
 
   .containera {
     position : relative;
+    
   display : flex;
   align-items : center;
   justify-content : center;
@@ -12,7 +13,9 @@
     position: relative;
     max-width : 300px;
     height : 215px;  
-    background-color : #fff;
+   
+    background-color : 
+    #5804fa;
     margin : 30px 10px;
     padding : 20px 15px;
     

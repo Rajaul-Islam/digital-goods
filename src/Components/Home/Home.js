@@ -3,6 +3,8 @@ import Banner from './Banner/Banner'
 import { useEffect, useState } from "react";
 import Mobile from './Mobile/Mobile';
 import { Row } from 'react-bootstrap';
+import UserReview from '../UserReview/UserReview';
+import GetEmail from '../GetEmail/GetEmail';
 
 const Home = () => {
     // const mobileCollection=[
@@ -74,6 +76,7 @@ const Home = () => {
     // ]
     const [mobiles, setMobiles] = useState([])
     useEffect(()=>{
+        // fetch('https://boiling-ravine-21246.herokuapp.com/services')
         fetch('http://localhost:5000/services')
         .then(res=>res.json())
         .then(data=>setMobiles(data))
@@ -84,13 +87,15 @@ const Home = () => {
         <Banner></Banner>
        <div className=' container-fluid' style={{backgroundColor:'#1b252f'}}>
         <h1 className='text-center text-white py-5'>Top selling Mobile</h1>  
-        <Row xs={1} md={3} className="g-4">
+        <Row xs={1} md={2} lg={3} className="g-4">
          
          {
              mobiles.map(mobile=><Mobile mobile={mobile}></Mobile>)
          }
          </Row>
        </div>
+       <UserReview></UserReview>
+       <GetEmail></GetEmail>
         </div>
     );
 };
