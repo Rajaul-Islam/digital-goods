@@ -115,7 +115,7 @@ const useFirebase = () => {
     
     
         useEffect(() => {
-            fetch(`https://dry-fortress-62945.herokuapp.com/uniqueUser/${user.email}`)
+            fetch(`http://localhost:5000/uniqueUser/${user.email}`)
                 .then(res => res.json())
                 .then(data => setAdmin(data.admin))
         }, [user.email])
@@ -139,7 +139,7 @@ const useFirebase = () => {
     
             const user = { email, displayName }
     
-            fetch('https://dry-fortress-62945.herokuapp.com/uniqueUser', {
+            fetch('http://localhost:5000/uniqueUser', {
                 method: method,
                 headers: {
                     'content-type': 'application/json'

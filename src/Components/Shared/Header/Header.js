@@ -36,9 +36,8 @@ const Header = () => {
                                             </>
                                         }
                                     >
-                                        <div className="text-center">
-                                            <p>{user.displayName}</p>
-                                            <p>{user.email}</p>
+                                        <div className="text-center bg-dark">
+                                        <Nav.Link as={NavLink} to='/dashboard'>DashBoard</Nav.Link>
                                             <div className="text-center">
                                                 <button onClick={logout} className="btn btn-primary">
                                                     Log Out

@@ -14,11 +14,13 @@ import {
 } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
+import ProcessOrder from "./Components/ProcessOrder/ProcessOrder";
 import AuthProvider from "./Components/Context/AuthProvider/AuthProvider";
 import SignUp from "./Components/UserActivities/SignUp/SignUp";
 import Login from "./Components/UserActivities/Login/Login";
 import Details from "./Components/Shared/Header/Details/Details";
 import PrivateRoute from "./Components/UserActivities/PrivateRoute/PrivateRoute";
+import DashBoard from "./Components/DashBoard/DashBoard";
 function App() {
 
 
@@ -46,6 +48,12 @@ function App() {
             </Route>
             <PrivateRoute path='/details'>
              <Details></Details>
+            </PrivateRoute>
+            <PrivateRoute path='/dashboard'>
+             <DashBoard></DashBoard>
+            </PrivateRoute>
+            <PrivateRoute path="/processorder/:id">
+            <ProcessOrder></ProcessOrder>
             </PrivateRoute>
           </Switch>
         </Router>
