@@ -1,4 +1,5 @@
 import React from 'react';
+import DashBoardHome from './DashBoardHome/DashBoardHome';
 import DashBoardNav from './DashBoardNav/DashBoardNav';
 
 const DashBoard = () => {
@@ -6,6 +7,7 @@ const DashBoard = () => {
         <div>
             
             <DashBoardNav></DashBoardNav>
+           
         </div>
     );
 };

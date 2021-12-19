@@ -3,6 +3,9 @@ import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 import useAuth from '../../Hook/useAuth';
 import AddService from '../AddService/AddService';
+import DashBoard from '../DashBoard';
+import DashBoardHome from '../DashBoardHome/DashBoardHome';
+import Payment from '../DashBoardHome/Payment/Payment';
 import MakeAmin from '../MakeAdmin/MakeAmin';
 import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
 import ManageProduct from '../ManageProduct/ManageProduct';
@@ -40,7 +43,7 @@ const DashBoardNav = () => {
 
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Nav.Link className='text-white' as={Link} to='/home'>Home</Nav.Link>
-                                <Nav.Link as={Link} to={`${url}`}>Dashboard</Nav.Link>
+                                <Nav.Link as={Link} to={`${url}/dashboard`}>Dashboard</Nav.Link>
                                 {
                                     admin ? <>
 
@@ -80,10 +83,13 @@ const DashBoardNav = () => {
 
             <Switch>
                 <Route exact path={path}>
-                    
+                <DashBoardHome></DashBoardHome>
+                </Route>
+                <Route path={`${path}/dashboard`}>
+                   <DashBoardHome></DashBoardHome>
                 </Route>
                 <Route path={`${path}/pay`}>
-                   
+                   <Payment></Payment>
                 </Route>
                 <Route path={`${path}/myOrder`}>
                 <MyOrder></MyOrder>
